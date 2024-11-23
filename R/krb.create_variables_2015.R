@@ -5,7 +5,7 @@
 krb.create_variables_2015 <- function(sf_df){
   # 面積を計算できない地域をデータフレームから除外する機構を実装
   invalids <- sf_df[!st_is_valid(sf_df), ]
-  KEY_CODE_to_eliminate <- invalids$KEYCODE %>% as_vector()
+  KEY_CODE_to_eliminate <- invalids$KEY_CODE %>% as_vector()
   sf_df <- sf_df %>%
     filter(!KEY_CODE %in% KEY_CODE_to_eliminate)
 
