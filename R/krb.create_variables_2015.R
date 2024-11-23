@@ -69,11 +69,11 @@ krb.create_variables_2015 <- function(sf_df){
       population_female75_ = as.numeric(replace(T000849060, T000849060 == "-", 0)),
       # 世帯数に関して
       households = as.numeric(replace(T000850001, T000850001 == "-", 0)),
-      householda1 = as.numeric(replace(T000850002, T000850002 == "-", 0)),
-      householda2 = as.numeric(replace(T000850003, T000850003 == "-", 0)),
-      householda3 = as.numeric(replace(T000850004, T000850004 == "-", 0)),
-      householda4 = as.numeric(replace(T000850005, T000850005 == "-", 0)),
-      householda5 = as.numeric(replace(T000850006, T000850006 == "-", 0)),
+      households1 = as.numeric(replace(T000850002, T000850002 == "-", 0)),
+      households2 = as.numeric(replace(T000850003, T000850003 == "-", 0)),
+      households3 = as.numeric(replace(T000850004, T000850004 == "-", 0)),
+      households4 = as.numeric(replace(T000850005, T000850005 == "-", 0)),
+      households5 = as.numeric(replace(T000850006, T000850006 == "-", 0)),
       # 平均世帯人数
       population_per_householda = as.numeric(replace(T000850008, T000850008 == "-", 0)),
       # 種類別世帯数
