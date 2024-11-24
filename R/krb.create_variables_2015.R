@@ -59,8 +59,8 @@ krb.create_variables_2015 <- function(sf_df){
       krb.population_male75_ = as.numeric(replace(T000849040, T000849040 == "-", 0)),
       # 女性年齢別人口
       krb.population_female0_4 = as.numeric(replace(T000849042, T000849042 == "-", 0)),
-      krb.population_female5_10 = as.numeric(replace(T000849043, T000849043 == "-", 0)),
-      krb.population_female11_14 = as.numeric(replace(T000849044, T000849044 == "-", 0)),
+      krb.population_female5_9 = as.numeric(replace(T000849043, T000849043 == "-", 0)),
+      krb.population_female10_14 = as.numeric(replace(T000849044, T000849044 == "-", 0)),
       krb.population_female15_19 = as.numeric(replace(T000849045, T000849045 == "-", 0)),
       krb.population_female20_24 = as.numeric(replace(T000849046, T000849046 == "-", 0)),
       krb.population_female25_29 = as.numeric(replace(T000849047, T000849047 == "-", 0)),
