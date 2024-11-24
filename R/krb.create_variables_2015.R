@@ -25,8 +25,8 @@ krb.create_variables_2015 <- function(sf_df){
       krb.population_female = as.numeric(T000848003),
       # 年齢別人口
       krb.population0_4 = as.numeric(replace(T000849002, T000849002 == "-", 0)),
-      krb.population5_10 = as.numeric(replace(T000849003, T000849003 == "-", 0)),
-      krb.population11_14 = as.numeric(replace(T000849004, T000849004 == "-", 0)),
+      krb.population5_9 = as.numeric(replace(T000849003, T000849003 == "-", 0)),
+      krb.population10_14 = as.numeric(replace(T000849004, T000849004 == "-", 0)),
       krb.population15_19 = as.numeric(replace(T000849005, T000849005 == "-", 0)),
       krb.population20_24 = as.numeric(replace(T000849006, T000849006 == "-", 0)),
       krb.population25_29 = as.numeric(replace(T000849007, T000849007 == "-", 0)),
@@ -82,7 +82,7 @@ krb.create_variables_2015 <- function(sf_df){
       krb.households4 = as.numeric(replace(T000850005, T000850005 == "-", 0)),
       krb.households5 = as.numeric(replace(T000850006, T000850006 == "-", 0)),
       # 平均世帯人数
-      krb.population_per_householda = as.numeric(replace(T000850008, T000850008 == "-", 0)),
+      krb.population_per_households = as.numeric(replace(T000850008, T000850008 == "-", 0)),
       # 種類別世帯数
       krb.households_relatives = as.numeric(replace(T000851002, T000851002 == "-", 0)),
       krb.households_core = as.numeric(replace(T000851003, T000851003 == "-", 0)),
@@ -142,7 +142,7 @@ krb.create_variables_2015 <- function(sf_df){
       krb.primary = as.numeric(replace(T000875002, T000875002 == "-", 0)),
       krb.primary_other = as.numeric(replace(T000875003, T000875003 == "-", 0)),
       krb.not_primary = as.numeric(replace(T000875004, T000875004 == "-", 0)),
-      krb.unemployed = as.numeric(replace(T000875005, T000875005 == "-", 0)),
+      krb.unemployed = as.numeric(replace(T000875005, T000875005 == "-", 0))
     )
   return(processed_df)
 }
