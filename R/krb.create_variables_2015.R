@@ -42,8 +42,8 @@ krb.create_variables_2015 <- function(sf_df){
       krb.population75_ = as.numeric(replace(T000849020, T000849020 == "-", 0)),
       # 男性年齢別人口
       krb.population_male0_4 = as.numeric(replace(T000849022, T000849022 == "-", 0)),
-      krb.population_male5_10 = as.numeric(replace(T000849023, T000849023 == "-", 0)),
-      krb.population_male11_14 = as.numeric(replace(T000849024, T000849024 == "-", 0)),
+      krb.population_male5_9 = as.numeric(replace(T000849023, T000849023 == "-", 0)),
+      krb.population_male10_14 = as.numeric(replace(T000849024, T000849024 == "-", 0)),
       krb.population_male15_19 = as.numeric(replace(T000849025, T000849025 == "-", 0)),
       krb.population_male20_24 = as.numeric(replace(T000849026, T000849026 == "-", 0)),
       krb.population_male25_29 = as.numeric(replace(T000849027, T000849027 == "-", 0)),
