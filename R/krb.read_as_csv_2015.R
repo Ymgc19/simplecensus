@@ -16,5 +16,8 @@ krb.read_as_csv_2015 <- function(dir_folder){
                       locale = locale(encoding = "cp932"))
     ) %>%
     reduce(left_join, by = "KEY_CODE") %>%
-    dplyr::select(-contains("."))
+    dplyr::select(-contains(".")) %>%
+    dplyr::mutate(
+      across(everything(), \(x) replace(x, x == "-", NA))
+    )
 }
