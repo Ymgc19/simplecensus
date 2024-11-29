@@ -1,11 +1,11 @@
 # shpのobjを出力する関数
 #' @title to look at cute frogs!!!
-#' @description \code{krb.read_census_shp}
+#' @description \code{smc.read_census_shp}
 #' @export
 #'
-krb.read_census_shp <- function(pref_code){
+smc.read_census_shp <- function(pref_code){
   library(tidyverse)
-  krb.collect_shp(pref_code)
+  smc.collect_shp(pref_code)
   if (pref_code <= 9){
     pref_code <- as.character(paste("0", pref_code, sep = ""))
   }
