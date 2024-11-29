@@ -18,6 +18,6 @@ krb.read_as_csv_2015 <- function(dir_folder){
     reduce(left_join, by = "KEY_CODE") %>%
     dplyr::select(-contains(".")) %>%
     dplyr::mutate(
-      across(everything(), \(x) replace(x, x == "-", NA))
+      across(everything(), \(x) replace(x, x == "-", 0))
     )
 }
