@@ -1,7 +1,7 @@
 #' @title to read files
-#' @description \code{frh.collect_census_2015}
+#' @description \code{smc.collect_census_2015}
 
-krb.collect_census_2015 <- function(pref_code){
+smc.collect_census_2015 <- function(pref_code){
   # pref_codeの調整
   library(utils)
   if (pref_code <= 9){

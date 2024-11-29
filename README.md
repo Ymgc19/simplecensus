@@ -1,3 +1,3 @@
 ```{r}
-devtools::install_github("Ymgc19/keroberos")
+devtools::install_github("Ymgc19/simplecensus")
 ```
