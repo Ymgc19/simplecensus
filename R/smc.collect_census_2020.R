@@ -22,7 +22,7 @@ smc.collect_census_2020 <- function(pref_code){
   # 指定された都道府県のデータをfor文でdownload
   zip_url <- c()  # zip_url ベクトルを初期化
   for (i in 1:9){
-    num <- c(081, 082, 083, 084, 085, 086, 103, 104, 106)
+    num <- c("081", "082", "083", "084", "085", "086", "103", "104", "106")
     url4 <- paste0(url1, as.character(num[i]), url2, pref_code, url3)  # url を正しく生成
     zip_url <- c(zip_url, url4)  # zip_url ベクトルに追加
   }
