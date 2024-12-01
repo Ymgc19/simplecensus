@@ -66,8 +66,8 @@ smc.convert_percentage_vars_2015 <- function(sf_df){
       smc.per.households_tenement = smc.households_tenement / smc.households,
       smc.per.households_communal_2 = smc.households_communal_2 / smc.households,
       smc.per.households_communal3_5 = smc.households_communal3_5 / smc.households,
-      smc.per.households_communal6_10 = smc.households_communal6_11 / smc.households,
-      smc.per.households_communal11_ = smc.households_communal12_ / smc.households,
+      smc.per.households_communal6_10 = smc.households_communal6_10 / smc.households,
+      smc.per.households_communal11_ = smc.households_communal11_ / smc.households,
       # 産業別人数
       smc.per.industry_A = smc.industry_A / smc.industry_all,
       smc.per.industry_B = smc.industry_B / smc.industry_all,
