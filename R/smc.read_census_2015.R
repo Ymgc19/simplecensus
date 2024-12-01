@@ -1,6 +1,7 @@
 #' @title to read files
 #' @description \code{frh.read_census_2015}
-#' @export
+
+
 
 smc.read_census_2015 <- function(pref_code){
   smc.collect_census_2015(pref_code)

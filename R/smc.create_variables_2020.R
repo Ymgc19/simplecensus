@@ -1,8 +1,7 @@
 #' @title to read files
 #' @description \code{smc.create_variable_2020}
-#' @export
 
-smc.create_variable_2020 <- function(sf_df){
+smc.create_variables_2020 <- function(sf_df){
   # 面積を計算できない地域をデータフレームから除外する機構を実装
   invalids <- sf_df[!st_is_valid(sf_df), ]
   KEY_CODE_to_eliminate <- invalids$KEY_CODE %>% as_vector()

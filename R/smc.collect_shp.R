@@ -1,6 +1,6 @@
 #' @title to collect shape files from internet
 #' @description \code{smc.collect_shp}
-#' @export
+
 
 smc.collect_shp <- function(pref_code) {
   library(sf)

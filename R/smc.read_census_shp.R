@@ -1,7 +1,8 @@
 # shpのobjを出力する関数
 #' @title to look at cute frogs!!!
 #' @description \code{smc.read_census_shp}
-#' @export
+
+
 smc.read_census_shp <- function(pref_code){
   library(tidyverse)
   smc.collect_shp(pref_code)
