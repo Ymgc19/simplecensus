@@ -99,9 +99,10 @@ smc.create_variables_2015 <- function(sf_df){
       smc.households_tenement = as.numeric(replace(T000853003, T000853003 == "-", 0)),
       smc.households_communal_2 = as.numeric(replace(T000853005, T000853005 == "-", 0)),
       smc.households_communal3_5 = as.numeric(replace(T000853006, T000853006 == "-", 0)),
-      smc.households_communal6_11 = as.numeric(replace(T000853007, T000853007 == "-", 0)),
-      smc.households_communal12_ = as.numeric(replace(T000853008, T000853008 == "-", 0)),
+      smc.households_communal6_10 = as.numeric(replace(T000853007, T000853007 == "-", 0)),
+      smc.households_communal11_ = as.numeric(replace(T000853008, T000853008 == "-", 0)),
       # 産業別人数
+      smc.worker_15 = as.numeric(replace(T000865000, T000865000 == "-", 0)),
       smc.industry_A = as.numeric(replace(T000865002, T000865002 == "-", 0)),
       smc.industry_B = as.numeric(replace(T000865004, T000865004 == "-", 0)),
       smc.industry_C = as.numeric(replace(T000865005, T000865005 == "-", 0)),
@@ -126,6 +127,7 @@ smc.create_variables_2015 <- function(sf_df){
       smc.self_employed = as.numeric(replace(T000865024, T000865024 == "-", 0)),
       smc.family_worker = as.numeric(replace(T000865025, T000865025 == "-", 0)),
       # 職業別就業者数
+      smc.sector_all = as.numeric(replace(T000866001, T000866001 == "-", 0)),
       smc.sector_A = as.numeric(replace(T000866002, T000866002 == "-", 0)),
       smc.sector_B = as.numeric(replace(T000866003, T000866003 == "-", 0)),
       smc.sector_C = as.numeric(replace(T000866004, T000866004 == "-", 0)),
