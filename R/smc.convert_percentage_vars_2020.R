@@ -1,6 +1,5 @@
 #' @title to read files
 #' @description \code{smc.convert_percentage_vars_2020}
-#' @export
 
 smc.convert_percentage_vars_2020 <- function(sf_df){
   sf_df <- sf_df %>%
