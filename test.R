@@ -3,4 +3,9 @@ library(simplecensus)
 library(tidyverse)
 
 
-hoge <- simplecensus::smc.get_census_2020(17)
+#hoge <- smc.get_census_2020(17)
+hoge <- simplecensus::smc.read_census_2020(17)
+
+hoge %>% glimpse()
+
+hoge$T001081001
