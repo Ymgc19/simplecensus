@@ -1,5 +1,5 @@
 #' @title to read files
-#' @description \code{smc.create_variable_2020}
+#' @description \code{smc.create_variables_2020}
 
 smc.create_variables_2020 <- function(sf_df){
   # 面積を計算できない地域をデータフレームから除外する機構を実装
