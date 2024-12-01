@@ -1,7 +1,7 @@
 #' @title to read files
-#' @description \code{smc.convert_percentage_vars_2015}
+#' @description \code{smc.convert_percentage_vars_2020}
 
-smc.convert_percentage_vars_2015 <- function(sf_df){
+smc.convert_percentage_vars_2020 <- function(sf_df){
   sf_df <- sf_df %>%
     mutate(
       # 性別割合
@@ -110,4 +110,4 @@ smc.convert_percentage_vars_2015 <- function(sf_df){
       smc.per.not_primary = smc.not_primary / smc.households,
       smc.per.unemployed = smc.unemployed / smc.households
     )
-  }
+}
