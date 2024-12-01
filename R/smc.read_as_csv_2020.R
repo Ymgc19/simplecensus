@@ -1,5 +1,5 @@
 #' @title to read files
-#' @description \code{frh.read_as_csv_2020}
+#' @description \code{smc.read_as_csv_2020}
 
 
 smc.read_as_csv_2020 <- function(dir_folder){
