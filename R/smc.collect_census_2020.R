@@ -26,7 +26,6 @@ smc.collect_census_2020 <- function(pref_code){
     url4 <- paste0(url1, num[i], url2, pref_code, url3)  # url を正しく生成
     zip_url <- c(zip_url, url4)  # zip_url ベクトルに追加
   }
-  print(zip_url)
   # for文でデータを全て読み込む
   for (url in zip_url) {
     filename <- paste0("tbl", substr(basename(url), 14, 20), "C", pref_code, ".zip")
