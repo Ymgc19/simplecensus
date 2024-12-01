@@ -1,6 +1,6 @@
 #' @title to read files
 #' @description \code{smc.create_variables_2015}
-
+#' @export
 smc.create_variables_2015 <- function(sf_df){
   # 面積を計算できない地域をデータフレームから除外する機構を実装
   invalids <- sf_df[!st_is_valid(sf_df), ]

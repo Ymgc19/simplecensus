@@ -1,6 +1,6 @@
 #' @title to read files
 #' @description \code{frh.read_as_csv_2015}
-
+#' @export
 smc.read_as_csv_2015 <- function(dir_folder){
   library(tidyverse)
   fs::dir_ls(here::here(dir_folder),
