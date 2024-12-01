@@ -1,6 +1,7 @@
 #' @title to collect shape files from internet
 #' @description \code{smc.collect_shp}
 
+
 smc.collect_shp <- function(pref_code) {
   library(sf)
   url1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?dlserveyId=A002005212015&code="

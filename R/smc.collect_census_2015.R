@@ -1,6 +1,7 @@
 #' @title to read files
 #' @description \code{smc.collect_census_2015}
 
+
 smc.collect_census_2015 <- function(pref_code){
   # pref_codeの調整
   library(utils)

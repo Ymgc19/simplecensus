@@ -1,6 +1,7 @@
 #' @title to read files
 #' @description \code{smc.convert_percentage_vars_2015}
 
+
 smc.convert_percentage_vars_2015 <- function(sf_df){
   sf_df <- sf_df %>%
     mutate(

@@ -1,6 +1,7 @@
 #' @title to read files
 #' @description \code{frh.read_census_2020}
 
+
 smc.read_census_2020 <- function(pref_code){
   smc.collect_census_2020(pref_code)
   download_dir <- paste0(
