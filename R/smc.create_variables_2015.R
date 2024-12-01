@@ -102,7 +102,7 @@ smc.create_variables_2015 <- function(sf_df){
       smc.households_communal6_10 = as.numeric(replace(T000853007, T000853007 == "-", 0)),
       smc.households_communal11_ = as.numeric(replace(T000853008, T000853008 == "-", 0)),
       # 産業別人数
-      smc.worker_15 = as.numeric(replace(T000865000, T000865000 == "-", 0)),
+      smc.industry_all = as.numeric(replace(T000865001, T000865001 == "-", 0)),
       smc.industry_A = as.numeric(replace(T000865002, T000865002 == "-", 0)),
       smc.industry_B = as.numeric(replace(T000865004, T000865004 == "-", 0)),
       smc.industry_C = as.numeric(replace(T000865005, T000865005 == "-", 0)),
