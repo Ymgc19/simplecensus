@@ -21,4 +21,3 @@ smc.collect_shp <- function(pref_code) {
   file.remove(zip_file)
 }
 
-
