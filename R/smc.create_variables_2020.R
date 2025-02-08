@@ -27,6 +27,7 @@ smc.create_variables_2020 <- function(sf_df){
   
   # ここで特徴量を作成
   processed_df <- sf_df %>%
+    st_as_sf() %>%
     st_transform(crs = 4326) %>%
     mutate(
       # 面積
