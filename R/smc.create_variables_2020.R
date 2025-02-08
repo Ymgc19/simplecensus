@@ -4,7 +4,7 @@
 smc.create_variables_2020 <- function(sf_df){
   # 面積が計算できるように調整
   df_area <- st_cast(sf_df, "POLYGON") %>% 
-    st_transform(crs = 4326) %>% 
+    st_transform(crs = 6677) %>% 
     st_make_valid()
   # 面積をバラで計算
   df_area <- df_area %>% 
