@@ -2,8 +2,24 @@
 #' @description \code{smc.create_variables_2020}
 
 smc.create_variables_2020 <- function(sf_df){
-  sf_df <- st_make_valid(sf_df)
-  # 面積を計算できない地域をデータフレームから除外する機構を実装
+  # 面積が計算できるように調整
+  df_area <- st_cast(sf_df, "POLYGON") %>% 
+    st_transform(crs = 6677) %>% 
+    st_make_valid()
+  # 面積をバラで計算
+  df_area <- df_area %>% 
+    mutate(
+      smc.AREA = st_area(.)
+    )
+  # バラで計算した面積を統合
+  df_area <- df_area %>% 
+    group_by(KEY_CODE) %>% 
+    summarise(smc.AREA = sum(smc.AREA)) 
+  # 面積データとsf_dfを結合
+  sf_df <- left_join(sf_df, df_area, by = "KEY_CODE")
+  
+  
+  # それでも面積を計算できない地域をデータフレームから除外する機構を実装
   invalids <- sf_df[!st_is_valid(sf_df), ]
   KEY_CODE_to_eliminate <- invalids$KEY_CODE %>% as_vector()
   sf_df <- sf_df %>%
@@ -14,7 +30,7 @@ smc.create_variables_2020 <- function(sf_df){
     st_transform(crs = 4326) %>%
     mutate(
       # 面積
-      smc.AREA = st_area(.),
+#      smc.AREA = st_area(.),
       # 人口
       smc.population = as.numeric(T001081001),
       # 人口密度
