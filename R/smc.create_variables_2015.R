@@ -14,7 +14,7 @@ smc.create_variables_2015 <- function(sf_df){
     st_transform(crs = 4326) %>%
     mutate(
       # 面積
-      smc.AREA = st_area(.),
+#      smc.AREA = st_area(.),
       # 人口
       smc.population = as.numeric(T000848001),
       # 人口密度
