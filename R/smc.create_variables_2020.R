@@ -3,22 +3,21 @@
 
 smc.create_variables_2020 <- function(sf_df){
   # 面積が計算できるように調整
-  df_area <- st_cast(sf_df, "POLYGON") %>% 
-    st_transform(crs = 6677) %>% 
-    st_make_valid()
+#  df_area <- st_cast(sf_df, "POLYGON") %>% 
+#    st_transform(crs = 6677) %>% 
+#    st_make_valid()
   # 面積をバラで計算
-  df_area <- df_area %>% 
-    mutate(
-      smc.AREA = st_area(.)
-    )
-  # バラで計算した面積を統合
-  df_area <- df_area %>% 
-    group_by(KEY_CODE) %>% 
-    summarise(smc.AREA = sum(smc.AREA)) %>%
-
-    st_drop_geometry()
+#  df_area <- df_area %>% 
+#    mutate(
+#      smc.AREA = st_area(.)
+#    )
+#  # バラで計算した面積を統合
+#  df_area <- df_area %>% 
+#    group_by(KEY_CODE) %>% 
+#    summarise(smc.AREA = sum(smc.AREA)) %>%
+#    st_drop_geometry()
   # 面積データとsf_dfを結合
-  sf_df <- left_join(sf_df, df_area, by = "KEY_CODE")
+#  sf_df <- left_join(sf_df, df_area, by = "KEY_CODE")
   
   
   # それでも面積を計算できない地域をデータフレームから除外する機構を実装
