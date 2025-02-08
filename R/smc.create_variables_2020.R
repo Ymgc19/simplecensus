@@ -36,7 +36,7 @@ smc.create_variables_2020 <- function(sf_df){
       # 人口
       smc.population = as.numeric(T001081001),
       # 人口密度
-      smc.population_density = as.numeric(T001081001) / as.numeric(smc.AREA),
+#      smc.population_density = as.numeric(T001081001) / as.numeric(smc.AREA),
       # 男性人口
       smc.population_male = as.numeric(T001081002),
       # 女性人口
