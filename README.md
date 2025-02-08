@@ -1,3 +1,4 @@
 ```{r}
-devtools::install_github("Ymgc19/simplecensus")
+# install.packages("pak")
+pak::pak("Ymgc19/simplecensus")
 ```

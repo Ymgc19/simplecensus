@@ -14,7 +14,8 @@ smc.create_variables_2020 <- function(sf_df){
   # バラで計算した面積を統合
   df_area <- df_area %>% 
     group_by(KEY_CODE) %>% 
-    summarise(smc.AREA = sum(smc.AREA)) %>% 
+    summarise(smc.AREA = sum(smc.AREA)) %>%
+
     st_drop_geometry()
   # 面積データとsf_dfを結合
   sf_df <- left_join(sf_df, df_area, by = "KEY_CODE")
@@ -28,6 +29,7 @@ smc.create_variables_2020 <- function(sf_df){
   
   # ここで特徴量を作成
   processed_df <- sf_df %>%
+    st_as_sf() %>%
     st_transform(crs = 4326) %>%
     mutate(
       # 面積
