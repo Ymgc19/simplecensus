@@ -100,7 +100,7 @@ smc.create_variables_2020 <- function(sf_df){
       smc.households4 = as.numeric(replace(T001083005, T001083005 == "-", 0)),
       smc.households5 = as.numeric(replace(T001083006, T001083006 == "-", 0)),
       # 平均世帯人数
-      smc.population_per_households = as.numeric(replace(T001083008, T001083008 == "-", 0)),
+      smc.population_per_households = as.numeric(replace(T001083007, T001083007 == "-", 0)) / as.numeric(replace(T001083001, T001083001 == "-", 0)),
       # 種類別世帯数
       smc.households_relatives = as.numeric(replace(T001084002, T001084002 == "-", 0)),
       smc.households_core = as.numeric(replace(T001084003, T001084003 == "-", 0)),
