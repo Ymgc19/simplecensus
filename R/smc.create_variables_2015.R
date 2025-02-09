@@ -4,10 +4,10 @@
 
 smc.create_variables_2015 <- function(sf_df){
   # 面積を計算できない地域をデータフレームから除外する機構を実装
-  invalids <- sf_df[!st_is_valid(sf_df), ]
-  KEY_CODE_to_eliminate <- invalids$KEY_CODE %>% as_vector()
-  sf_df <- sf_df %>%
-    filter(!KEY_CODE %in% KEY_CODE_to_eliminate)
+#  invalids <- sf_df[!st_is_valid(sf_df), ]
+#  KEY_CODE_to_eliminate <- invalids$KEY_CODE %>% as_vector()
+#  sf_df <- sf_df %>%
+#    filter(!KEY_CODE %in% KEY_CODE_to_eliminate)
 
   # ここで特徴量を作成
   processed_df <- sf_df %>%
@@ -18,7 +18,7 @@ smc.create_variables_2015 <- function(sf_df){
       # 人口
       smc.population = as.numeric(T000848001),
       # 人口密度
-      smc.population_density = as.numeric(T000848001) / as.numeric(smc.AREA),
+#      smc.population_density = as.numeric(T000848001) / as.numeric(smc.AREA),
       # 男性人口
       smc.population_male = as.numeric(T000848002),
       # 女性人口
