@@ -4,10 +4,10 @@
 
 smc.collect_mesh_shp <- function(pref_code) {
   if (pref_code <= 9){
-    pref_code <- as.character(paste("0", pref_code, sep = ""))
+    pref_code_chr <- as.character(paste("0", pref_code, sep = ""))
   }
   else{
-    pref_code <- pref_code
+    pref_code_chr <- as.character(pref_code)
   }
   library(sf)
   # メッシュコードを指定
@@ -129,7 +129,7 @@ smc.collect_mesh_shp <- function(pref_code) {
   }
 
   # フォルダ名の作成
-  folder_name <- paste(pref_code, "census_mesh_shp", sep = "")
+  folder_name <- paste(pref_code_chr, "census_mesh_shp", sep = "")
   dir.create(folder_name, showWarnings = FALSE)
   
   # ZIPファイルをダウンロードし、解凍
