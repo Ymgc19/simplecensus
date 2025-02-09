@@ -3,6 +3,12 @@
 
 
 smc.collect_mesh_shp <- function(pref_code) {
+  if (pref_code <= 9){
+    pref_code <- as.character(paste("0", pref_code, sep = ""))
+  }
+  else{
+    pref_code <- pref_code
+  }
   library(sf)
   # メッシュコードを指定
   # 北海道
