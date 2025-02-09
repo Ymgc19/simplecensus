@@ -50,7 +50,7 @@ smc.read_census_mesh_2015 <- function(pref_code){
   }
   unlink(download_dir, recursive = T) # 使用済みのフォルダを削除
   
-  # ========== データ1に関して ========== #
+  # ========== データ3に関して ========== #
   download_dir <- paste0(
     formatC(pref_code, width = 2, flag = "0"),
     "国勢調査メッシュ2015_3"

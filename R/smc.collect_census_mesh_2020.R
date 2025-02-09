@@ -123,28 +123,33 @@ smc.collect_census_mesh_2020 <- function(pref_code){
   
   # urlを調整
   # 250m　その1
-  url1_1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?statsId=T000876&code="
+  url1_1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?statsId=T001102&code="
   url1_2 <- "&downloadType=2"
   # 250m その2
-  url2_1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?statsId=T000881&code="
+  url2_1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?statsId=T001109&code="
   url2_2 <- "&downloadType=2"
   # 250m　その3
-  url3_1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?statsId=T000882&code="
+  url3_1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?statsId=T001142&code="
   url3_2 <- "&downloadType=2"
+  # 250m　その4
+  url4_1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?statsId=T001145&code="
+  url4_2 <- "&downloadType=2"
   
   # ダウンロードするurlのリストを作成
   zip_url_1 <- c()
   zip_url_2 <- c()
   zip_url_3 <- c()
+  zip_url_4 <- c()
   for (i in mesh_code_list[[pref_code]]){
     zip_url_1 <- c(zip_url_1, paste0(url1_1, i, url1_2))
     zip_url_2 <- c(zip_url_2, paste0(url2_1, i, url2_2))
     zip_url_3 <- c(zip_url_3, paste0(url3_1, i, url3_2))
+    zip_url_4 <- c(zip_url_4, paste0(url4_1, i, url4_2))
   }
   
   # ========== 変数1 ダウンロード ========== #
   # ディレクトリを作成
-  download_dir_1 <- paste(as.character(pref_code), "国勢調査メッシュ2015_1", sep = "")
+  download_dir_1 <- paste(as.character(pref_code), "国勢調査メッシュ2020_1", sep = "")
   if (!file.exists(download_dir_1)) {
     dir.create(download_dir_1)
   }
@@ -160,7 +165,7 @@ smc.collect_census_mesh_2020 <- function(pref_code){
   
   # ========== 変数2 ダウンロード ========== #
   # ディレクトリを作成
-  download_dir_2 <- paste(as.character(pref_code), "国勢調査メッシュ2015_2", sep = "")
+  download_dir_2 <- paste(as.character(pref_code), "国勢調査メッシュ2020_2", sep = "")
   if (!file.exists(download_dir_2)) {
     dir.create(download_dir_2)
   }
@@ -176,13 +181,29 @@ smc.collect_census_mesh_2020 <- function(pref_code){
   
   # ========== 変数3 ダウンロード ========== #
   # ディレクトリを作成
-  download_dir_3 <- paste(as.character(pref_code), "国勢調査メッシュ2015_3", sep = "")
+  download_dir_3 <- paste(as.character(pref_code), "国勢調査メッシュ2020_3", sep = "")
   if (!file.exists(download_dir_3)) {
     dir.create(download_dir_3)
   }
   # 指定された都道府県のデータをfor文でdownload
   # for文でデータを全て読み込む
   for (url in zip_url_3) {
+    filename <- paste0("tbl", substr(basename(url), 14, 20), "C", pref_code, ".zip")
+    download.file(url, destfile = file.path(download_dir_3, filename), mode = "wb")
+    unzip(file.path(download_dir_3, filename), exdir = download_dir_3)
+    txt_files <- list.files(download_dir_3, pattern = ".txt", full.names = TRUE)
+    file.remove(file.path(download_dir_3, filename))
+  }
+  
+  # ========== 変数4 ダウンロード ========== #
+  # ディレクトリを作成
+  download_dir_4 <- paste(as.character(pref_code), "国勢調査メッシュ2020_4", sep = "")
+  if (!file.exists(download_dir_4)) {
+    dir.create(download_dir_4)
+  }
+  # 指定された都道府県のデータをfor文でdownload
+  # for文でデータを全て読み込む
+  for (url in zip_url_4) {
     filename <- paste0("tbl", substr(basename(url), 14, 20), "C", pref_code, ".zip")
     download.file(url, destfile = file.path(download_dir_3, filename), mode = "wb")
     unzip(file.path(download_dir_3, filename), exdir = download_dir_3)
