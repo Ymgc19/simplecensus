@@ -205,9 +205,9 @@ smc.collect_census_mesh_2020 <- function(pref_code){
   # for文でデータを全て読み込む
   for (url in zip_url_4) {
     filename <- paste0("tbl", substr(basename(url), 14, 20), "C", pref_code, ".zip")
-    download.file(url, destfile = file.path(download_dir_3, filename), mode = "wb")
-    unzip(file.path(download_dir_3, filename), exdir = download_dir_3)
-    txt_files <- list.files(download_dir_3, pattern = ".txt", full.names = TRUE)
-    file.remove(file.path(download_dir_3, filename))
+    download.file(url, destfile = file.path(download_dir_4, filename), mode = "wb")
+    unzip(file.path(download_dir_4, filename), exdir = download_dir_4)
+    txt_files <- list.files(download_dir_4, pattern = ".txt", full.names = TRUE)
+    file.remove(file.path(download_dir_4, filename))
   }
 }
