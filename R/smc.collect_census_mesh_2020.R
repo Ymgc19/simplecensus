@@ -8,6 +8,10 @@ smc.collect_census_mesh_2020 <- function(pref_code){
   if (pref_code <= 9){
     pref_code <- as.character(paste("0", pref_code, sep = ""))
   }
+  else{
+    pref_code <- pref_code
+  }
+  print(pref_code)
   library(tidyverse)
   
   # メッシュコードを指定
