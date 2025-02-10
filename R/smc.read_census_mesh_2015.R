@@ -18,11 +18,13 @@ smc.read_census_mesh_2015 <- function(pref_code){
                          regexp = ".txt$")
   # データを読み込んで行結合していく
   df_1 <- read_delim(dir_vec_1[1], delim = ",",
-                     locale = locale(encoding = "cp932"))
+                     locale = locale(encoding = "cp932")) %>% 
+    mutate(GASSAN = as.character(GASSAN))
   for (i in 2:length(dir_vec_1)){
     # ひとつひとつデータの読み込み
     hoge_1 <- read_delim(dir_vec_1[i], delim = ",",
-                       locale = locale(encoding = "cp932"))
+                       locale = locale(encoding = "cp932")) %>% 
+      mutate(GASSAN = as.character(GASSAN))
     # 行を結合していく
     df_1 <- bind_rows(df_1, hoge_1) %>% distinct()
   }
@@ -40,11 +42,13 @@ smc.read_census_mesh_2015 <- function(pref_code){
   print(download_dir)
   # データを読み込んで行結合していく
   df_2 <- read_delim(dir_vec_2[1], delim = ",",
-                     locale = locale(encoding = "cp932"))
+                     locale = locale(encoding = "cp932")) %>% 
+    mutate(GASSAN = as.character(GASSAN))
   for (i in 2:length(dir_vec_2)){
     # ひとつひとつデータの読み込み
     hoge_2 <- read_delim(dir_vec_2[i], delim = ",",
-                       locale = locale(encoding = "cp932"))
+                       locale = locale(encoding = "cp932")) %>% 
+      mutate(GASSAN = as.character(GASSAN))
     # 行を結合していく
     df_2 <- bind_rows(df_2, hoge_2) %>% distinct()
   }
@@ -61,11 +65,13 @@ smc.read_census_mesh_2015 <- function(pref_code){
                           regexp = ".txt$")
   # データを読み込んで行結合していく
   df_3 <- read_delim(dir_vec_3[1], delim = ",",
-                     locale = locale(encoding = "cp932"))
+                     locale = locale(encoding = "cp932")) %>% 
+    mutate(GASSAN = as.character(GASSAN))
   for (i in 2:length(dir_vec_3)){
     # ひとつひとつデータの読み込み
     hoge_3 <- read_delim(dir_vec_3[i], delim = ",",
-                       locale = locale(encoding = "cp932"))
+                       locale = locale(encoding = "cp932")) %>% 
+      mutate(GASSAN = as.character(GASSAN))
     # 行を結合していく
     df_3 <- bind_rows(df_3, hoge_3) %>% distinct()
   }
