@@ -2,7 +2,7 @@
 #' @description \code{smc.read_census_mesh_2020}
 
 smc.read_census_mesh_2020 <- function(pref_code){
-  #  smc.collect_census_mesh_2020(pref_code) # データのtxtを取得
+  smc.collect_census_mesh_2020(pref_code) # データのtxtを取得
   
   if (pref_code <= 9){
     pref_code_chr <- as.character(paste("0", pref_code, sep = ""))
