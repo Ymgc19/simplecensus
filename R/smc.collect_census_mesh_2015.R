@@ -134,7 +134,7 @@ smc.collect_census_mesh_2015 <- function(pref_code){
   zip_url_1 <- c()
   zip_url_2 <- c()
   zip_url_3 <- c()
-  for (i in mesh_code_list[[pref_code]]){
+  for (i in mesh_code_list[[pref_code %>% as.numeric()]]){
     zip_url_1 <- c(zip_url_1, paste0(url1_1, i, url1_2))
     zip_url_2 <- c(zip_url_2, paste0(url2_1, i, url2_2))
     zip_url_3 <- c(zip_url_3, paste0(url3_1, i, url3_2))
