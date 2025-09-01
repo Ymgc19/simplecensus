@@ -1,7 +1,7 @@
 #' @title to read files
 #' @description \code{smc.read_census_mesh_2020}
 
-smc.read_census_mesh_2020 <- function(pref_code){
+smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   smc.collect_census_mesh_2020(pref_code) # データのtxtを取得
   
   if (pref_code <= 9){
@@ -13,6 +13,7 @@ smc.read_census_mesh_2020 <- function(pref_code){
   
   # ========== データ1に関して ========== #
   download_dir <- paste0(
+    dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
     "国勢調査メッシュ2020_1"
   ) # 変数1のフォルダ指定
@@ -37,6 +38,7 @@ smc.read_census_mesh_2020 <- function(pref_code){
   
   # ========== データ2に関して ========== #
   download_dir <- paste0(
+    dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
     "国勢調査メッシュ2020_2"
   ) # 変数1のフォルダ指定
@@ -62,6 +64,7 @@ smc.read_census_mesh_2020 <- function(pref_code){
   
   # ========== データ3に関して ========== #
   download_dir <- paste0(
+    dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
     "国勢調査メッシュ2020_3"
   ) # 変数1のフォルダ指定
@@ -86,6 +89,7 @@ smc.read_census_mesh_2020 <- function(pref_code){
   
   # ========== データ4に関して ========== #
   download_dir <- paste0(
+    dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
     "国勢調査メッシュ2020_4"
   ) # 変数1のフォルダ指定
