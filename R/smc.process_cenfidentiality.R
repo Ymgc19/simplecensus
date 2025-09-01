@@ -25,6 +25,7 @@ smc.process_cenfidentiality <- function(mesh){
       )
     print(j / hitoku_ari_df_nrow)
   }
+  return(mesh)
 }
 
 
