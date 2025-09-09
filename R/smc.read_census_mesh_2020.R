@@ -112,9 +112,113 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   unlink(download_dir, recursive = T) # 使用済みのフォルダを削除
   print("OK")
   
+  # ========== データ5に関して ========== #
+  download_dir <- paste0(
+    dir,
+    formatC(pref_code_chr, width = 2, flag = "0"),
+    "国勢調査メッシュ2020_5"
+  ) # 変数1のフォルダ指定
+  # 読み込むファイルのベクトル
+  dir_vec_5 <- fs::dir_ls(here::here(download_dir),
+                          recurse = TRUE,
+                          regexp = ".txt$")
+  # データを読み込んで行結合していく
+  df_5<- read_delim(dir_vec_5[1], delim = ",",
+                     locale = locale(encoding = "cp932")) %>% 
+    mutate(GASSAN = as.character(GASSAN))
+  for (i in 2:length(dir_vec_5)){
+    # ひとつひとつデータの読み込み
+    hoge_5 <- read_delim(dir_vec_5[i], delim = ",",
+                         locale = locale(encoding = "cp932")) %>% 
+      mutate(GASSAN = as.character(GASSAN))
+    # 行を結合していく
+    df_5 <- bind_rows(df_5, hoge_5) %>% distinct()
+  }
+  unlink(download_dir, recursive = T) # 使用済みのフォルダを削除
+  print("OK")
+  
+  # ========== データ6に関して ========== #
+  download_dir <- paste0(
+    dir,
+    formatC(pref_code_chr, width = 2, flag = "0"),
+    "国勢調査メッシュ2020_6"
+  ) # 変数1のフォルダ指定
+  # 読み込むファイルのベクトル
+  dir_vec_6 <- fs::dir_ls(here::here(download_dir),
+                          recurse = TRUE,
+                          regexp = ".txt$")
+  # データを読み込んで行結合していく
+  df_6 <- read_delim(dir_vec_6[1], delim = ",",
+                     locale = locale(encoding = "cp932")) %>% 
+    mutate(GASSAN = as.character(GASSAN))
+  for (i in 2:length(dir_vec_6)){
+    # ひとつひとつデータの読み込み
+    hoge_6 <- read_delim(dir_vec_6[i], delim = ",",
+                         locale = locale(encoding = "cp932")) %>% 
+      mutate(GASSAN = as.character(GASSAN))
+    # 行を結合していく
+    df_6 <- bind_rows(df_6, hoge_6) %>% distinct()
+  }
+  unlink(download_dir, recursive = T) # 使用済みのフォルダを削除
+  print("OK")
+  
+  # ========== データ7に関して ========== #
+  download_dir <- paste0(
+    dir,
+    formatC(pref_code_chr, width = 2, flag = "0"),
+    "国勢調査メッシュ2020_7"
+  ) # 変数1のフォルダ指定
+  # 読み込むファイルのベクトル
+  dir_vec_7 <- fs::dir_ls(here::here(download_dir),
+                          recurse = TRUE,
+                          regexp = ".txt$")
+  # データを読み込んで行結合していく
+  df_7 <- read_delim(dir_vec_7[1], delim = ",",
+                     locale = locale(encoding = "cp932")) %>% 
+    mutate(GASSAN = as.character(GASSAN))
+  for (i in 2:length(dir_vec_7)){
+    # ひとつひとつデータの読み込み
+    hoge_7 <- read_delim(dir_vec_7[i], delim = ",",
+                         locale = locale(encoding = "cp932")) %>% 
+      mutate(GASSAN = as.character(GASSAN))
+    # 行を結合していく
+    df_7 <- bind_rows(df_7, hoge_7) %>% distinct()
+  }
+  unlink(download_dir, recursive = T) # 使用済みのフォルダを削除
+  print("OK")
+  
+  # ========== データ8に関して ========== #
+  download_dir <- paste0(
+    dir,
+    formatC(pref_code_chr, width = 2, flag = "0"),
+    "国勢調査メッシュ2020_8"
+  ) # 変数1のフォルダ指定
+  # 読み込むファイルのベクトル
+  dir_vec_8 <- fs::dir_ls(here::here(download_dir),
+                          recurse = TRUE,
+                          regexp = ".txt$")
+  # データを読み込んで行結合していく
+  df_8 <- read_delim(dir_vec_8[1], delim = ",",
+                     locale = locale(encoding = "cp932")) %>% 
+    mutate(GASSAN = as.character(GASSAN))
+  for (i in 2:length(dir_vec_8)){
+    # ひとつひとつデータの読み込み
+    hoge_8 <- read_delim(dir_vec_8[i], delim = ",",
+                         locale = locale(encoding = "cp932")) %>% 
+      mutate(GASSAN = as.character(GASSAN))
+    # 行を結合していく
+    df_8 <- bind_rows(df_8, hoge_8) %>% distinct()
+  }
+  unlink(download_dir, recursive = T) # 使用済みのフォルダを削除
+  print("OK")
+  
   # 全部のデータを行結合
   df <- left_join(df_1, df_2, by = "KEY_CODE")
   df <- left_join(df, df_3, by = "KEY_CODE")
   df <- left_join(df, df_4, by = "KEY_CODE")
+  df <- left_join(df, df_5, by = "KEY_CODE")
+  df <- left_join(df, df_6, by = "KEY_CODE")
+  df <- left_join(df, df_7, by = "KEY_CODE")
+  df <- left_join(df, df_8, by = "KEY_CODE")
   return(df)
 }
