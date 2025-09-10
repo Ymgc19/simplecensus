@@ -2,10 +2,11 @@
 #' @description \code{smc.create_variables_2020_mesh}
 
 smc.create_variables_2020_mesh <- function(sf_df){
+  processed_df <- sf_df %>% 
   mutate(
     # 人口統計に関するもの
     # 人口情報
-    msh.per.male = as.numeric(T001102002) / as.numeric(T001102001), # 男性割合
+    msh.per.male = as.numeric(`T001102002`) / as.numeric(T001102001), # 男性割合
     msh.per.female = as.numeric(T001102003) / as.numeric(T001102001), # 女性割合
     
     msh.per.0_14 = as.numeric(T001102004) / as.numeric(T001102001), # 14歳以下割合
