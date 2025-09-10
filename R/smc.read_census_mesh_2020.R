@@ -124,7 +124,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
                           regexp = ".txt$")
   # データを読み込んで行結合していく
   df_5<- read_delim(dir_vec_5[1], delim = ",",
-                     locale = locale(encoding = "cp932")) %>% 
+                    locale = locale(encoding = "cp932")) %>% 
     mutate(GASSAN = as.character(GASSAN))
   for (i in 2:length(dir_vec_5)){
     # ひとつひとつデータの読み込み
