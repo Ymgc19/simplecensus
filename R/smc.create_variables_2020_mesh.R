@@ -548,7 +548,7 @@ smc.create_variables_2020_mesh <- function(sf_df){
     msh.per_children_12_14_female = as.numeric(T001199117) / as.numeric(T001199115),
     msh.per_children_15_17 = as.numeric(T001199118) / as.numeric(T001102001),
     msh.per_children_15_17_male = as.numeric(T001199119) / as.numeric(T001199118),
-    msh.per_children_15_17_female = as.numeric(T001199119) / as.numeric(T001199118),
+    msh.per_children_15_17_female = as.numeric(T001199120) / as.numeric(T001199118),
   )
   return(processed_df)
 }
