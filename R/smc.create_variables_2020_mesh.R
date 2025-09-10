@@ -153,29 +153,6 @@ smc.create_variables_2020_mesh <- function(sf_df){
     msh.per.live_20 = as.numeric(T001109079) / as.numeric(T001102001), # 20年-
     msh.per.live_20_male = as.numeric(T001109080) / as.numeric(T001102001), 
     msh.per.live_20_female = as.numeric(T001109081) / as.numeric(T001102001), 
-    # 産業と世帯
-    msh.per.house_primary = as.numeric(T001109082) / as.numeric(T001102034), # 農林水産業
-    msh.per.house_combine = as.numeric(T001109083) / as.numeric(T001102034), # 農林水産業と非農林水産業混合
-    msh.per.house_not_primary = as.numeric(T001109084) / as.numeric(T001102034), # 非農林水産業
-    msh.per.house_unemploy = as.numeric(T001109085) / as.numeric(T001102034), # 非就業者世帯
-    # 通勤通学（分母は15歳以上人口）
-    msh.per.commute_15 = as.numeric(T001109086) / as.numeric(T001102007), # 当地に常住する１５歳以上就業者・通学者　総数
-    msh.per.commute_15_work = as.numeric(T001109087) / as.numeric(T001102007), # 当地に常住する１５歳以上就業者
-    msh.per.commute_15_school = as.numeric(T001109088) / as.numeric(T001102007), # 当地に常住する１５歳以上通学者
-    # 通勤通学手段（分母は15歳以上）
-    msh.per.commute_walk = as.numeric(T001109089) / as.numeric(T001102007), # 徒歩
-    msh.per.commute_train = as.numeric(T001109090) / as.numeric(T001102007), # 電車
-    msh.per.commute_bus = as.numeric(T001109091) / as.numeric(T001102007), # バス
-    msh.per.commute_car = as.numeric(T001109092) / as.numeric(T001102007), # 車
-    msh.per.commute_autobike = as.numeric(T001109093) / as.numeric(T001102007), # オートバイ
-    msh.per.commute_bike = as.numeric(T001109094) / as.numeric(T001102007), # 自転車
-    
-    
-    
-    
-    
-    
-    
     
     
     # 新しい国勢調査
@@ -506,52 +483,52 @@ smc.create_variables_2020_mesh <- function(sf_df){
     # 教育に関して
     # 就学状況
     msh.per.before_school = as.numeric(T001199058) / as.numeric(T001102001), # 未就学
-    msh.per.before_school_male = as.numeric(T001109059) / as.numeric(T001199058),
-    msh.per.before_school_female = as.numeric(T001109060) / as.numeric(T001199058),
-    msh.per.before_school_youchien = as.numeric(T001109061) / as.numeric(T001199058), # 未就学 幼稚園
-    msh.per.before_school_youchien_male = as.numeric(T001109062) / as.numeric(T001199058),
-    msh.per.before_school_youchien_female = as.numeric(T001109063) / as.numeric(T001199058),
-    msh.per.before_school_hoikuen = as.numeric(T001109064) / as.numeric(T001199058), # 未就学 保育園
-    msh.per.before_school_hoikuen_male = as.numeric(T001109065) / as.numeric(T001199058),
-    msh.per.before_school_hoikuen_female = as.numeric(T001109066) / as.numeric(T001199058),
-    msh.per.before_school_nintei = as.numeric(T001109067) / as.numeric(T001199058), # 未就学 認定こども園
-    msh.per.before_school_nintei_male = as.numeric(T001109068) / as.numeric(T001199058),
-    msh.per.before_school_nintei_female = as.numeric(T001109069) / as.numeric(T001199058),
-    msh.per.before_school_other = as.numeric(T001109070) / as.numeric(T001199058), # 未就学 その他
-    msh.per.before_school_other_male = as.numeric(T001109071) / as.numeric(T001199058),
-    msh.per.before_school_other_female = as.numeric(T001109072) / as.numeric(T001199058),
+    msh.per.before_school_male = as.numeric(T001199059) / as.numeric(T001199058),
+    msh.per.before_school_female = as.numeric(T001199060) / as.numeric(T001199058),
+    msh.per.before_school_youchien = as.numeric(T001199061) / as.numeric(T001199058), # 未就学 幼稚園
+    msh.per.before_school_youchien_male = as.numeric(T001199062) / as.numeric(T001199058),
+    msh.per.before_school_youchien_female = as.numeric(T001199063) / as.numeric(T001199058),
+    msh.per.before_school_hoikuen = as.numeric(T001199064) / as.numeric(T001199058), # 未就学 保育園
+    msh.per.before_school_hoikuen_male = as.numeric(T001199065) / as.numeric(T001199058),
+    msh.per.before_school_hoikuen_female = as.numeric(T001199066) / as.numeric(T001199058),
+    msh.per.before_school_nintei = as.numeric(T001199067) / as.numeric(T001199058), # 未就学 認定こども園
+    msh.per.before_school_nintei_male = as.numeric(T001199068) / as.numeric(T001199058),
+    msh.per.before_school_nintei_female = as.numeric(T001199069) / as.numeric(T001199058),
+    msh.per.before_school_other = as.numeric(T001199070) / as.numeric(T001199058), # 未就学 その他
+    msh.per.before_school_other_male = as.numeric(T001199071) / as.numeric(T001199058),
+    msh.per.before_school_other_female = as.numeric(T001199072) / as.numeric(T001199058),
     msh.per.school = as.numeric(T001199073) / as.numeric(T001102001), # 在学者
-    msh.per.school_male = as.numeric(T001109074) / as.numeric(T001199073), 
-    msh.per.school_female = as.numeric(T001109075) / as.numeric(T001199073), 
-    msh.per.school_compulsory = as.numeric(T001109076) / as.numeric(T001199073), # 在学者 義務教育
-    msh.per.school_compulsory_male = as.numeric(T001109077) / as.numeric(T001199073), 
-    msh.per.school_compulsory_female = as.numeric(T001109078) / as.numeric(T001199073), 
-    msh.per.school_high = as.numeric(T001109079) / as.numeric(T001199073), # 在学者 高校
-    msh.per.school_high_male = as.numeric(T001109080) / as.numeric(T001199073), 
-    msh.per.school_high_female = as.numeric(T001109081) / as.numeric(T001199073), 
-    msh.per.school_j_college = as.numeric(T001109082) / as.numeric(T001199073), # 在学者 短大高専
-    msh.per.school_j_college_male = as.numeric(T001109083) / as.numeric(T001199073), 
-    msh.per.school_j_college_female = as.numeric(T001109084) / as.numeric(T001199073), 
-    msh.per.school_university = as.numeric(T001109085) / as.numeric(T001199073), # 在学者 大学
-    msh.per.school_university_male = as.numeric(T001109086) / as.numeric(T001199073), 
-    msh.per.school_university_female = as.numeric(T001109087) / as.numeric(T001199073), 
+    msh.per.school_male = as.numeric(T001199074) / as.numeric(T001199073), 
+    msh.per.school_female = as.numeric(T001199075) / as.numeric(T001199073), 
+    msh.per.school_compulsory = as.numeric(T001199076) / as.numeric(T001199073), # 在学者 義務教育
+    msh.per.school_compulsory_male = as.numeric(T001199077) / as.numeric(T001199073), 
+    msh.per.school_compulsory_female = as.numeric(T001199078) / as.numeric(T001199073), 
+    msh.per.school_high = as.numeric(T001199079) / as.numeric(T001199073), # 在学者 高校
+    msh.per.school_high_male = as.numeric(T001199080) / as.numeric(T001199073), 
+    msh.per.school_high_female = as.numeric(T001199081) / as.numeric(T001199073), 
+    msh.per.school_j_college = as.numeric(T001199082) / as.numeric(T001199073), # 在学者 短大高専
+    msh.per.school_j_college_male = as.numeric(T001199083) / as.numeric(T001199073), 
+    msh.per.school_j_college_female = as.numeric(T001199084) / as.numeric(T001199073), 
+    msh.per.school_university = as.numeric(T001199085) / as.numeric(T001199073), # 在学者 大学
+    msh.per.school_university_male = as.numeric(T001199086) / as.numeric(T001199073), 
+    msh.per.school_university_female = as.numeric(T001199087) / as.numeric(T001199073), 
     
     # 最終学歴
     msh.per.school_grad = as.numeric(T001199088) / as.numeric(T001102007), # 最終学歴
-    msh.per.school_grad_male = as.numeric(T001109089) / as.numeric(T001199088), 
-    msh.per.school_grad_female = as.numeric(T001109090) / as.numeric(T001199088), 
-    msh.per.school_grad_compulsory = as.numeric(T001109091) / as.numeric(T001199088), # 最終学歴 小中学
-    msh.per.school_grad_compulsory_male = as.numeric(T001109092) / as.numeric(T001199088), 
-    msh.per.school_grad_compulsory_female = as.numeric(T001109093) / as.numeric(T001199088), 
-    msh.per.school_grad_high = as.numeric(T001109094) / as.numeric(T001199088), # 最終学歴 高校
-    msh.per.school_grad_high_male = as.numeric(T001109095) / as.numeric(T001199088), 
-    msh.per.school_grad_high_female = as.numeric(T001109096) / as.numeric(T001199088), 
-    msh.per.school_grad_j_college = as.numeric(T001109097) / as.numeric(T001199088), # 最終学歴 短大高専
-    msh.per.school_grad_j_college_male = as.numeric(T001109098) / as.numeric(T001199088), 
-    msh.per.school_grad_j_college_female = as.numeric(T001109099) / as.numeric(T001199088), 
-    msh.per.school_grad_university = as.numeric(T001109100) / as.numeric(T001199088), # 最終学歴 大学
-    msh.per.school_grad_university_male = as.numeric(T001109101) / as.numeric(T001199088), 
-    msh.per.school_grad_university_female = as.numeric(T001109102) / as.numeric(T001199088),
+    msh.per.school_grad_male = as.numeric(T001199089) / as.numeric(T001199088), 
+    msh.per.school_grad_female = as.numeric(T001199090) / as.numeric(T001199088), 
+    msh.per.school_grad_compulsory = as.numeric(T001199091) / as.numeric(T001199088), # 最終学歴 小中学
+    msh.per.school_grad_compulsory_male = as.numeric(T001199092) / as.numeric(T001199088), 
+    msh.per.school_grad_compulsory_female = as.numeric(T001199093) / as.numeric(T001199088), 
+    msh.per.school_grad_high = as.numeric(T001199094) / as.numeric(T001199088), # 最終学歴 高校
+    msh.per.school_grad_high_male = as.numeric(T001199095) / as.numeric(T001199088), 
+    msh.per.school_grad_high_female = as.numeric(T001199096) / as.numeric(T001199088), 
+    msh.per.school_grad_j_college = as.numeric(T001199097) / as.numeric(T001199088), # 最終学歴 短大高専
+    msh.per.school_grad_j_college_male = as.numeric(T001199098) / as.numeric(T001199088), 
+    msh.per.school_grad_j_college_female = as.numeric(T001199099) / as.numeric(T001199088), 
+    msh.per.school_grad_university = as.numeric(T001199100) / as.numeric(T001199088), # 最終学歴 大学
+    msh.per.school_grad_university_male = as.numeric(T001199101) / as.numeric(T001199088), 
+    msh.per.school_grad_university_female = as.numeric(T001199102) / as.numeric(T001199088),
     
     # 子供の年齢
     msh.per_children_0_2 = as.numeric(T001199103) / as.numeric(T001102001),
