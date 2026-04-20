@@ -2,7 +2,7 @@
 #' @description \code{smc.collect_census_2015}
 
 
-smc.collect_census_2015 <- function(pref_code){
+smc.collect_census_2015 <- function(pref_code, dir = NULL){
   # pref_codeの調整
   library(utils)
   if (pref_code <= 9){
@@ -15,7 +15,15 @@ smc.collect_census_2015 <- function(pref_code){
   url3 <- "&downloadType=2"
 
   # ディレクトリを作成
-  download_dir <- paste(as.character(pref_code), "国勢調査2015", sep = "")
+  sub_dir <- paste(as.character(pref_code), "国勢調査2015", sep = "")
+  if (is.null(dir)) {
+    download_dir <- sub_dir
+  } else {
+    if (!file.exists(dir)) {
+      dir.create(dir, recursive = TRUE)
+    }
+    download_dir <- file.path(dir, sub_dir)
+  }
   if (!file.exists(download_dir)) {
     dir.create(download_dir)
   }

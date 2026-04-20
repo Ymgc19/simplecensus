@@ -2,12 +2,12 @@
 #' @description \code{smc.get_census_2020}
 #' @export
 
-smc.get_census_2020 <- function(pref_code){
+smc.get_census_2020 <- function(pref_code, dir = NULL){
   library(simplecensus)
   # データ取得
-  shp <- simplecensus::smc.read_census_shp(pref_code) %>% 
+  shp <- simplecensus::smc.read_census_shp(pref_code) %>%
     mutate(KEY_CODE = as.numeric(KEY_CODE))
-  census <- simplecensus::smc.read_census_2020(pref_code) %>% 
+  census <- simplecensus::smc.read_census_2020(pref_code, dir = dir) %>%
     mutate(KEY_CODE = as.numeric(KEY_CODE))
   # 結合
   df <- left_join(shp, census)
