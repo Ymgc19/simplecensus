@@ -1,15 +1,10 @@
-#' @title to collect shape files from internet
-#' @description \code{smc.collect_mesh_shp}
+#' @title to get 1st-level mesh codes of a prefecture
+#' @description \code{smc.mesh_code_list}
+#' @param pref_code 都道府県コード（1〜47の整数）
+#' @return 当該都道府県を覆う第1次地域区画（1次メッシュ）コードのベクトル
+#' @export
 
-
-smc.collect_mesh_shp_1000m <- function(pref_code) {
-  if (pref_code <= 9){
-    pref_code_chr <- as.character(paste("0", pref_code, sep = ""))
-  }
-  else{
-    pref_code_chr <- as.character(pref_code)
-  }
-  library(sf)
+smc.mesh_code_list <- function(pref_code){
   # メッシュコードを指定
   # 北海道
   p01 <- c(6239, 6240, 6241, 6243, 6339, 6340, 6341, 6342, 6343, 6439,
@@ -108,34 +103,18 @@ smc.collect_mesh_shp_1000m <- function(pref_code) {
   p46 <- c(4028, 4128, 4129, 4229, 4230, 4329, 4429, 4530,
            4531, 4629, 4630, 4631, 4729, 4730, 4731, 4830)
   # 沖縄
-  p47 <- c(3622,3623,3624,3724,3725,3926,
-           3927,3928,4027,4028,4128)
+  p47 <- c(3622, 3623, 3624, 3724, 3725, 3926,
+           3927, 3928, 4027, 4028, 4128)
   # 便宜的にリスト化
   mesh_code_list <- list(p01, p02, p03, p04, p05, p06, p07, p08, p09, p10,
                          p11, p12, p13, p14, p15, p16, p17, p18, p19, p20,
                          p21, p22, p23, p24, p25, p26, p27, p28, p29, p30,
                          p31, p32, p33, p34, p35, p36, p37, p38, p39, p40,
                          p41, p42, p43, p44, p45, p46, p47)
-  
-  
-  # ダウンドードするメッシュのベクトル
-  dl_url_vec <- c()
-  url1 <- "https://www.e-stat.go.jp/gis/statmap-search/data?dlserveyId=S&code="
-  url2 <- "&coordSys=2&format=shape&downloadType=5"
-  for (i in 1:length(mesh_code_list[[pref_code]])){
-    dl_url_vec <- c(dl_url_vec, paste0(url1, mesh_code_list[[pref_code]][i], url2))
-  }
 
-  # フォルダ名の作成
-  folder_name <- paste(pref_code_chr, "census_mesh_shp", sep = "")
-  dir.create(folder_name, showWarnings = FALSE)
-  
-  # ZIPファイルをダウンロードし、解凍
-  for (i in dl_url_vec){
-    zip_file <- file.path(folder_name, "shapefile.zip")
-    download.file(i, destfile = zip_file, mode = "wb") # 'wb'モードでバイナリファイルをダウンロード
-    unzip(zip_file, exdir = folder_name)
-    file.remove(zip_file)
+  pref_code <- as.integer(pref_code)
+  if (is.na(pref_code) || pref_code < 1 || pref_code > 47) {
+    stop("pref_code は 1〜47 の整数で指定してください。")
   }
+  return(mesh_code_list[[pref_code]])
 }
-

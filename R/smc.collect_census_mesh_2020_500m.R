@@ -1,0 +1,84 @@
+#' @title to collect 500m mesh census files (2020) from e-Stat
+#' @description \code{smc.collect_census_mesh_2020_500m}
+#' @details
+#' 2020年（令和2年）国勢調査の4次メッシュ（500mメッシュ）統計を
+#' e-Stat からダウンロードして解凍する。
+#' 取得する統計表（statsId）は以下の8つ。
+#' \itemize{
+#'   \item T001101 : その1 人口及び世帯（JGD2000）
+#'   \item T001108 : その2 人口移動、就業状態等及び従業地・通学地（JGD2000）
+#'   \item T001141 : その3 人口及び世帯（JGD2011）
+#'   \item T001144 : その4 人口移動、就業状態等及び従業地・通学地（JGD2011）
+#'   \item T001192 : その5 5歳階級別人口（JGD2011）
+#'   \item T001193 : その6 労働力状態、産業分類及び職業分類別人口（15歳以上）（JGD2011）
+#'   \item T001194 : その7 住宅の所有及び建て方（JGD2011）
+#'   \item T001195 : その8 5年前の常住地及び従業地・通学地等（JGD2011）
+#' }
+#' 250mメッシュ版（smc.collect_census_mesh_2020）の T001102 / T001109 /
+#' T001142 / T001145 / T001196 〜 T001199 と1対1で対応している。
+#' @param pref_code 都道府県コード（1〜47の整数）
+#' @param dir ダウンロード先の親ディレクトリ。NULL の場合は作業ディレクトリ直下
+#' @return 作成した8つのフォルダのパス（character vector）
+#' @export
+
+smc.collect_census_mesh_2020_500m <- function(pref_code, dir = NULL){
+  library(utils)
+  library(tidyverse)
+
+  # pref_codeの調整
+  pref_code_chr <- formatC(as.integer(pref_code), width = 2, flag = "0")
+  print(pref_code_chr)
+
+  # 対象となる1次メッシュコード
+  mesh_codes <- smc.mesh_code_list(pref_code)
+
+  # 500mメッシュ（4次メッシュ）の統計表ID
+  stats_ids <- c(
+    "T001101", # その1 人口及び世帯（JGD2000）
+    "T001108", # その2 人口移動、就業状態等及び従業地・通学地（JGD2000）
+    "T001141", # その3 人口及び世帯（JGD2011）
+    "T001144", # その4 人口移動、就業状態等及び従業地・通学地（JGD2011）
+    "T001192", # その5 5歳階級別人口（JGD2011）
+    "T001193", # その6 労働力状態、産業分類及び職業分類別人口（15歳以上）（JGD2011）
+    "T001194", # その7 住宅の所有及び建て方（JGD2011）
+    "T001195"  # その8 5年前の常住地及び従業地・通学地等（JGD2011）
+  )
+
+  # urlを調整
+  url_head <- "https://www.e-stat.go.jp/gis/statmap-search/data?statsId="
+  url_tail <- "&downloadType=2"
+
+  download_dirs <- c()
+  for (j in seq_along(stats_ids)) {
+    # ディレクトリを作成（250m・1kmのフォルダ名と衝突しないようにする）
+    sub_dir <- paste0(pref_code_chr, "国勢調査メッシュ2020_500m_", j)
+    if (is.null(dir)) {
+      download_dir <- sub_dir
+    } else {
+      if (!file.exists(dir)) {
+        dir.create(dir, recursive = TRUE)
+      }
+      download_dir <- file.path(dir, sub_dir)
+    }
+    if (!file.exists(download_dir)) {
+      dir.create(download_dir)
+    }
+
+    # 指定された都道府県のデータをfor文でdownload
+    for (mesh in mesh_codes) {
+      url <- paste0(url_head, stats_ids[j], "&code=", mesh, url_tail)
+      zip_file <- file.path(
+        download_dir,
+        paste0("tbl", stats_ids[j], "H", mesh, ".zip")
+      )
+      download.file(url, destfile = zip_file, mode = "wb")
+      unzip(zip_file, exdir = download_dir)
+      file.remove(zip_file)
+    }
+
+    download_dirs <- c(download_dirs, download_dir)
+    print(paste0("downloaded: ", stats_ids[j], " (", j, "/", length(stats_ids), ")"))
+  }
+
+  return(download_dirs)
+}
