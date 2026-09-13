@@ -15,7 +15,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   download_dir <- paste0(
     dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
-    "国勢調査メッシュ2020_1"
+    "国勢調査メッシュ2020_250m_1"
   ) # 変数1のフォルダ指定
   # 読み込むファイルのベクトル
   dir_vec_1 <- fs::dir_ls(here::here(download_dir),
@@ -40,7 +40,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   download_dir <- paste0(
     dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
-    "国勢調査メッシュ2020_2"
+    "国勢調査メッシュ2020_250m_2"
   ) # 変数1のフォルダ指定
   # 読み込むファイルのベクトル
   dir_vec_2 <- fs::dir_ls(here::here(download_dir),
@@ -66,7 +66,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   download_dir <- paste0(
     dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
-    "国勢調査メッシュ2020_3"
+    "国勢調査メッシュ2020_250m_3"
   ) # 変数1のフォルダ指定
   # 読み込むファイルのベクトル
   dir_vec_3 <- fs::dir_ls(here::here(download_dir),
@@ -91,7 +91,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   download_dir <- paste0(
     dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
-    "国勢調査メッシュ2020_4"
+    "国勢調査メッシュ2020_250m_4"
   ) # 変数1のフォルダ指定
   # 読み込むファイルのベクトル
   dir_vec_4 <- fs::dir_ls(here::here(download_dir),
@@ -116,7 +116,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   download_dir <- paste0(
     dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
-    "国勢調査メッシュ2020_5"
+    "国勢調査メッシュ2020_250m_5"
   ) # 変数1のフォルダ指定
   # 読み込むファイルのベクトル
   dir_vec_5 <- fs::dir_ls(here::here(download_dir),
@@ -141,7 +141,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   download_dir <- paste0(
     dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
-    "国勢調査メッシュ2020_6"
+    "国勢調査メッシュ2020_250m_6"
   ) # 変数1のフォルダ指定
   # 読み込むファイルのベクトル
   dir_vec_6 <- fs::dir_ls(here::here(download_dir),
@@ -166,7 +166,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   download_dir <- paste0(
     dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
-    "国勢調査メッシュ2020_7"
+    "国勢調査メッシュ2020_250m_7"
   ) # 変数1のフォルダ指定
   # 読み込むファイルのベクトル
   dir_vec_7 <- fs::dir_ls(here::here(download_dir),
@@ -191,7 +191,7 @@ smc.read_census_mesh_2020 <- function(pref_code, dir = ""){
   download_dir <- paste0(
     dir,
     formatC(pref_code_chr, width = 2, flag = "0"),
-    "国勢調査メッシュ2020_8"
+    "国勢調査メッシュ2020_250m_8"
   ) # 変数1のフォルダ指定
   # 読み込むファイルのベクトル
   dir_vec_8 <- fs::dir_ls(here::here(download_dir),

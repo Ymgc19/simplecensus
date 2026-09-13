@@ -151,7 +151,7 @@ smc.collect_census_mesh_2020_1000m <- function(pref_code){
   
   # ========== 変数1 ダウンロード ========== #
   # ディレクトリを作成
-  download_dir_1 <- paste(as.character(pref_code_chr), "国勢調査メッシュ2020_1", sep = "")
+  download_dir_1 <- paste(as.character(pref_code_chr), "国勢調査メッシュ2020_1000m_1", sep = "")
   if (!file.exists(download_dir_1)) {
     dir.create(download_dir_1)
   }
@@ -167,7 +167,7 @@ smc.collect_census_mesh_2020_1000m <- function(pref_code){
   
   # ========== 変数2 ダウンロード ========== #
   # ディレクトリを作成
-  download_dir_2 <- paste(as.character(pref_code_chr), "国勢調査メッシュ2020_2", sep = "")
+  download_dir_2 <- paste(as.character(pref_code_chr), "国勢調査メッシュ2020_1000m_2", sep = "")
   if (!file.exists(download_dir_2)) {
     dir.create(download_dir_2)
   }
@@ -183,7 +183,7 @@ smc.collect_census_mesh_2020_1000m <- function(pref_code){
   
   # ========== 変数3 ダウンロード ========== #
   # ディレクトリを作成
-  download_dir_3 <- paste(as.character(pref_code_chr), "国勢調査メッシュ2020_3", sep = "")
+  download_dir_3 <- paste(as.character(pref_code_chr), "国勢調査メッシュ2020_1000m_3", sep = "")
   if (!file.exists(download_dir_3)) {
     dir.create(download_dir_3)
   }
@@ -199,7 +199,7 @@ smc.collect_census_mesh_2020_1000m <- function(pref_code){
   
   # ========== 変数4 ダウンロード ========== #
   # ディレクトリを作成
-  download_dir_4 <- paste(as.character(pref_code_chr), "国勢調査メッシュ2020_4", sep = "")
+  download_dir_4 <- paste(as.character(pref_code_chr), "国勢調査メッシュ2020_1000m_4", sep = "")
   if (!file.exists(download_dir_4)) {
     dir.create(download_dir_4)
   }

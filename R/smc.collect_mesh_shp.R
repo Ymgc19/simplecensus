@@ -127,7 +127,7 @@ smc.collect_mesh_shp <- function(pref_code) {
   }
 
   # フォルダ名の作成
-  folder_name <- paste(pref_code_chr, "census_mesh_shp", sep = "")
+  folder_name <- paste(pref_code_chr, "census_mesh_shp_250m", sep = "")
   dir.create(folder_name, showWarnings = FALSE)
   
   # ZIPファイルをダウンロードし、解凍

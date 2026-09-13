@@ -13,7 +13,7 @@ smc.read_census_mesh_shp <- function(pref_code){
     pref_code <- pref_code
   }
   # ファイル名を指定
-  folder_name <- paste0(pref_code, "census_mesh_shp")
+  folder_name <- paste0(pref_code, "census_mesh_shp_250m")
   
   # ここでfolder_nameに含まれるshpをまとめて取得
   shp_to_read <- list.files(path = folder_name, pattern = "\\.shp$", full.names = TRUE, recursive = TRUE)
