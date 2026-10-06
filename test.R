@@ -39,3 +39,33 @@ ms %>% ggplot() +
   )
 
 #ms$smc.per.unemployed %>% hist
+
+
+
+
+
+
+library(tidyverse)
+library(sf)
+st_layers("R-20240101161121-0132-00001.kml")
+kml <- read_sf("R-20240101161121-0132-00001.kml")
+
+head(kml)
+st_geometry(kml)
+st_crs(kml)
+
+
+
+
+hoge <- smc.get_census_mesh_2015_500m(17)
+
+hoge %>% 
+  filter(as.numeric(T000847001) >= 0) %>% 
+  ggplot() +
+  geom_sf(
+    color = NA,
+    aes(fill = as.numeric(T000847001))
+  ) +
+  labs(fill = "")
+
+hoge %>% glimpse()
